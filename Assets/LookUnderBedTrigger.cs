@@ -22,7 +22,7 @@ public class LookUnderBedTrigger : MonoBehaviour
     {
         if (triggered) return;
 
-        if (other.transform == playerHead)
+        if (other.CompareTag("Player"))
         {
             triggered = true;
 
