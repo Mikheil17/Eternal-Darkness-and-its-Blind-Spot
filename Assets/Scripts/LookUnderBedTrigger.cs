@@ -20,6 +20,8 @@ public class LookUnderBedTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"[LookUnderBedTrigger] OnTriggerEnter called with {other.name}");
+
         if (triggered) return;
 
         if (other.CompareTag("Player"))
