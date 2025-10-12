@@ -3353,6 +3353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   room1: {fileID: 1962591281}
   room2: {fileID: 251737091}
+  room3: {fileID: 644256589}
   playerTag: Player
 --- !u!54 &686740692
 Rigidbody:
