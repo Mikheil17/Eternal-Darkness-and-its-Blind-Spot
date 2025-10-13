@@ -9266,7 +9266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHead: {fileID: 782628377}
   fadeImage: {fileID: 1606032783579803818, guid: 739f7bf9de14b4b44a0c34a6bb9bfa64, type: 3}
-  fadeDuration: 2
+  fadeDuration: 8
 --- !u!65 &1236808858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16743,6 +16743,10 @@ PrefabInstance:
     - target: {fileID: 166771954833275361, guid: 739f7bf9de14b4b44a0c34a6bb9bfa64, type: 3}
       propertyPath: m_Name
       value: fadeimage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606032783579803818, guid: 739f7bf9de14b4b44a0c34a6bb9bfa64, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4143823022890352267, guid: 739f7bf9de14b4b44a0c34a6bb9bfa64, type: 3}
       propertyPath: m_Pivot.x
