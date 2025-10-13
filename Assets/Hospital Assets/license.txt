@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tissue box 3D scan
+* source:	https://sketchfab.com/3d-models/tissue-box-3d-scan-4a865636990648ca95b7b6bff87bdebe
+* author:	jkyfk (https://sketchfab.com/jkyfk)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tissue box 3D scan" (https://sketchfab.com/3d-models/tissue-box-3d-scan-4a865636990648ca95b7b6bff87bdebe) by jkyfk (https://sketchfab.com/jkyfk) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
