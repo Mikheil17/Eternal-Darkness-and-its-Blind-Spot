@@ -15,6 +15,18 @@ public class FadeOut : MonoBehaviour
 
     private bool triggered = false;
 
+    private void Start()
+    {
+        // Make sure fade image starts invisible but active
+        if (fadeImage != null)
+        {
+            Color c = fadeImage.color;
+            c.a = 0f;
+            fadeImage.color = c;
+            fadeImage.gameObject.SetActive(true);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (triggered || !other.CompareTag("Player"))
@@ -29,12 +41,9 @@ public class FadeOut : MonoBehaviour
         if (fadeImage == null)
             yield break;
 
-        fadeImage.gameObject.SetActive(true);
         Color color = fadeImage.color;
-        color.a = 0f;
-        fadeImage.color = color;
-
         float elapsed = 0f;
+
         while (elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
