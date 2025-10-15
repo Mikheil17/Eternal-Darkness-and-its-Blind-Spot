@@ -36,6 +36,7 @@ public class FadeOut : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log($"[FadeToWhite] OnTriggerEnter called with {other.name}");
         if (triggered || !other.CompareTag("Player"))
             return;
 
