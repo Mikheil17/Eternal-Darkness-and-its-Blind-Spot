@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Video;
 
 [RequireComponent(typeof(AudioSource))]
-public class VideoQuadHandler : MonoBehaviour
+public class IntroSetup : MonoBehaviour
 {
     [Header("References (assign in Inspector or let script create)")]
     public VideoPlayer videoPlayer;
