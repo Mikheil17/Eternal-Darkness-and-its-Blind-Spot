@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +12,13 @@ public class FadeOut : MonoBehaviour
 
     [Header("Fade settings")]
     public float fadeDuration = 2f;
+
+    [Header("Audio to stop on fade")]
+    public AudioSource audioToStop1;
+    public AudioSource audioToStop2;
+
+    [Header("Audio")]
+    public AudioSource ambientAudio;
 
     private bool triggered = false;
 
@@ -34,6 +41,18 @@ public class FadeOut : MonoBehaviour
             return;
 
         triggered = true;
+        // Stop the audio sources 🎧
+        if (audioToStop1 != null && audioToStop1.isPlaying)
+            audioToStop1.Stop();
+
+        if (audioToStop2 != null && audioToStop2.isPlaying)
+            audioToStop2.Stop();
+
+        if (ambientAudio != null)
+        {
+            ambientAudio.Play();
+        }
+
         StartCoroutine(FadeToWhite());
     }
 
@@ -53,7 +72,7 @@ public class FadeOut : MonoBehaviour
             yield return null;
         }
 
-        // ensure full white at end
+        // Ensure full white at end
         color.a = 1f;
         fadeImage.color = color;
     }
