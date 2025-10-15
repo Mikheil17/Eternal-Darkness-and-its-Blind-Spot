@@ -932,8 +932,6 @@ MonoBehaviour:
   roomToHide: {fileID: 251737091}
   roomToShow: {fileID: 644256589}
   playerTag: Player
-  ambientAudio: {fileID: 1935398201}
-  playOnSwap: 1
 --- !u!54 &80093237
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5095,8 +5093,6 @@ MonoBehaviour:
   roomToHide: {fileID: 1962591281}
   roomToShow: {fileID: 251737091}
   playerTag: Player
-  ambientAudio: {fileID: 1448520909}
-  playOnSwap: 1
 --- !u!54 &686740692
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5736,7 +5732,7 @@ CapsuleCollider:
   m_Radius: 0.2
   m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &782628379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7339,8 +7335,6 @@ MonoBehaviour:
   roomToHide: {fileID: 0}
   roomToShow: {fileID: 0}
   playerTag: Player
-  ambientAudio: {fileID: 0}
-  playOnSwap: 1
 --- !u!54 &1035628217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9250,9 +9244,6 @@ MonoBehaviour:
   playerHead: {fileID: 782628377}
   fadeImage: {fileID: 1606032783579803818, guid: 739f7bf9de14b4b44a0c34a6bb9bfa64, type: 3}
   fadeDuration: 8
-  audioToStop1: {fileID: 1935398201}
-  audioToStop2: {fileID: 1667559487}
-  ambientAudio: {fileID: 870431821}
 --- !u!65 &1236808858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11288,6 +11279,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e29edd6f0acc005428782aa9e75f8118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 0}
+  quad: {fileID: 0}
+  quadRenderer: {fileID: 0}
+  vrCamera: {fileID: 0}
+  uiToShowAfterVideo: {fileID: 0}
+  canvasToDeactivate: {fileID: 0}
+  distanceFromCamera: 1
+  quadResolution: {x: 1920, y: 1080}
 --- !u!1001 &1488386190
 PrefabInstance:
   m_ObjectHideFlags: 0
