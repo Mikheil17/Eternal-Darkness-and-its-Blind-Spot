@@ -1,34 +1,55 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class FadeOut : MonoBehaviour
 {
     [Header("References")]
-    public Image fadeImage;                 // The UI Image that covers the screen (white, alpha = 0)
-    public AudioSource audioSource;         // The audio source to play when triggered
-    public float fadeDuration = 8f;         // Fade duration in seconds
-    public bool quitOnEnd = true;           // Whether to quit the game after the sound ends
+    public Image fadeImage;                       // The UI Image that covers the screen (white, alpha = 0)
+
+    [Tooltip("Primary audio to play during fade")]
+    public AudioSource audioSource;               // The main audio to play when triggered
+
+    [Tooltip("Other audios to stop when triggered (like ambient sounds, music, etc.)")]
+    public AudioSource[] otherAudioSources;       // Any other audios to stop immediately
+
+    public float fadeDuration = 8f;               // Fade duration in seconds
+    public bool quitOnEnd = true;                 // Whether to quit the game after the sound ends
 
     private bool hasTriggered = false;
     private float fadeTimer = 0f;
 
     private void OnTriggerEnter(Collider other)
     {
-        // Trigger only once, when player hits the collider
+        // Trigger only once
         if (hasTriggered) return;
 
-        // Check if the object entering is the XR Rig or player head
         if (other.CompareTag("Player"))
         {
             hasTriggered = true;
-            audioSource.Play();
+
+            // Stop all secondary audios immediately
+            foreach (AudioSource a in otherAudioSources)
+            {
+                if (a != null && a.isPlaying)
+                    a.Stop();
+            }
+
+            // Play the main fade audio
+            if (audioSource != null)
+                audioSource.Play();
+
             StartCoroutine(FadeOutAndQuit());
         }
     }
 
-    private System.Collections.IEnumerator FadeOutAndQuit()
+    private IEnumerator FadeOutAndQuit()
     {
+        if (fadeImage == null)
+            yield break;
+
         Color c = fadeImage.color;
+        fadeTimer = 0f;
 
         // Fade to white
         while (fadeTimer < fadeDuration)
@@ -39,13 +60,14 @@ public class FadeOut : MonoBehaviour
             yield return null;
         }
 
-        // Wait for the audio to finish
-        while (audioSource.isPlaying)
+        // Wait for main audio to finish (if assigned)
+        if (audioSource != null)
         {
-            yield return null;
+            while (audioSource.isPlaying)
+                yield return null;
         }
 
-        // Quit the game (works in build, not in Editor)
+        // Quit game (works only in build)
         if (quitOnEnd)
         {
             Application.Quit();

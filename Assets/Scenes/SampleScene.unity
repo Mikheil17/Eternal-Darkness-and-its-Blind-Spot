@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1.4
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
-  m_SkyboxMaterial: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -593,8 +593,8 @@ Transform:
   m_GameObject: {fileID: 37464773}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.746, y: -1.6792586, z: -0.847}
-  m_LocalScale: {x: 0.8313556, y: 5, z: 0.6950831}
+  m_LocalPosition: {x: 0.969, y: -1.6792586, z: -0.19}
+  m_LocalScale: {x: 2, y: 5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1882506027}
@@ -932,7 +932,7 @@ MonoBehaviour:
   roomToHide: {fileID: 251737091}
   roomToShow: {fileID: 644256589}
   playerTag: Player
-  ambientAudio: {fileID: 0}
+  ambientAudio: {fileID: 1935398201}
   playOnSwap: 1
 --- !u!54 &80093237
 Rigidbody:
@@ -5324,7 +5324,7 @@ MonoBehaviour:
   roomToHide: {fileID: 1962591281}
   roomToShow: {fileID: 251737091}
   playerTag: Player
-  ambientAudio: {fileID: 0}
+  ambientAudio: {fileID: 1448520909}
   playOnSwap: 1
 --- !u!54 &686740692
 Rigidbody:
@@ -9563,8 +9563,8 @@ Transform:
   m_GameObject: {fileID: 1236808855}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.741, y: -0.928, z: 0.021}
-  m_LocalScale: {x: 0.8313556, y: 5, z: 0.6950831}
+  m_LocalPosition: {x: -6.919, y: -0.962, z: 0.267}
+  m_LocalScale: {x: 2, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 644256590}
@@ -9583,6 +9583,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 205599880}
   audioSource: {fileID: 870431821}
+  otherAudioSources:
+  - {fileID: 1667559487}
+  - {fileID: 1935398201}
   fadeDuration: 12
   quitOnEnd: 1
 --- !u!65 &1236808858
@@ -11380,13 +11383,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e369782fd902d441bbaa3cd64f21002, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 25
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -17013,13 +17016,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b0ceb592811fc34bbf5ee66511a4f81, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 20
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
