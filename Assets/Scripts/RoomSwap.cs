@@ -15,6 +15,10 @@ public class RoomSwap : MonoBehaviour
     public AudioSource ambientAudio;
     public bool playOnSwap = true;
 
+    [Header("Flashlight Fix")]
+    [Tooltip("Reference to the player's flashlight GameObject (the one with a Light component)")]
+    public GameObject flashlightObject;
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag(playerTag)) return;
@@ -28,6 +32,24 @@ public class RoomSwap : MonoBehaviour
         {
             ambientAudio.loop = true;
             ambientAudio.Play();
+        }
+
+        // Ensure flashlight light is active if it got turned off mid-flicker
+        if (flashlightObject != null)
+        {
+            Light lightComp = flashlightObject.GetComponent<Light>();
+            if (lightComp != null && !lightComp.enabled)
+            {
+                Debug.Log("[RoomSwap] Flashlight was off during swap — re-enabling spotlight.");
+                lightComp.enabled = true;
+            }
+
+            // Also ensure the GameObject itself is active (in case something disabled it)
+            if (!flashlightObject.activeSelf)
+            {
+                flashlightObject.SetActive(true);
+                Debug.Log("[RoomSwap] Flashlight GameObject was inactive — reactivated.");
+            }
         }
 
         // Prevent retriggering

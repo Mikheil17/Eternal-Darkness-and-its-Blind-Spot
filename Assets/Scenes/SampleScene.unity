@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1.4
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -934,6 +934,7 @@ MonoBehaviour:
   playerTag: Player
   ambientAudio: {fileID: 1935398201}
   playOnSwap: 1
+  flashlightObject: {fileID: 230578459}
 --- !u!54 &80093237
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5326,6 +5327,7 @@ MonoBehaviour:
   playerTag: Player
   ambientAudio: {fileID: 1448520909}
   playOnSwap: 1
+  flashlightObject: {fileID: 230578459}
 --- !u!54 &686740692
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7572,6 +7574,7 @@ MonoBehaviour:
   playerTag: Player
   ambientAudio: {fileID: 0}
   playOnSwap: 1
+  flashlightObject: {fileID: 0}
 --- !u!54 &1035628217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8322,7 +8325,7 @@ Transform:
   m_GameObject: {fileID: 1116432241}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.85825706, y: -0.839259, z: 0.52541256}
+  m_LocalPosition: {x: -0.741, y: -0.839259, z: 0.52541256}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.20000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11108,7 +11111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
       propertyPath: m_Intensity
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 7c4cfd35d7e78fb44a0f5522e37c35b1, type: 3}
       propertyPath: m_SpotAngle
@@ -17016,7 +17019,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4b0ceb592811fc34bbf5ee66511a4f81, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.05
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
